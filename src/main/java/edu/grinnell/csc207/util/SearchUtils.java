@@ -147,7 +147,7 @@ public class SearchUtils {
   public static int binarySearch(int[] vals, int i) throws Exception {
     //return 0;
     return iterativeBinarySearch(vals, i);
-    // return recursiveBinarySearch(vals, i);
+    //return recursiveBinarySearch(vals, i);
   } // binarySearch
 
 } // class SearchUtils
