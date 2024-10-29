@@ -22,7 +22,8 @@ public class SearchUtils {
    * @param val
    *   An integer we're searching for
    * @return
-   *   index, an index of val (if one exists)
+   *   index, an index of val (if one exists) throws Exception {
+    throw new Exception("Unimplemented");
    * @throws Exception
    *   If there is no i s.t. values[i] == val
    * @pre
@@ -102,9 +103,13 @@ public class SearchUtils {
    * @throws Exception
    *   If no matching value is found.
    */
-  public static <T> T search(Iterable<T> values, Predicate<? super T> pred) 
-      throws Exception {
-    throw new Exception("Unimplemented");       // STUB
+  public static <T> T search(Iterable<T> values, Predicate<? super T> pred) throws Exception { 
+    for (T val : values) {
+      if(pred.test(val)) {
+        return val;
+      }
+    }  
+    throw new Exception("No match");   // STUB
   } // search(Iterable<T>, Predicate<? super T>)
 
   /**

@@ -22,8 +22,9 @@ public class SearchExperiments {
    *
    * @param args
    *   Command-line arguments. Ignored.
+   * @throws Exception 
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     PrintWriter pen = new PrintWriter(System.out, true);
 
     String[] tmp =
@@ -35,6 +36,10 @@ public class SearchExperiments {
                        "victor", "whiskey", "xray", "yankee", "zulu" };
     ArrayList<String> strings = new ArrayList<String>(Arrays.asList(tmp));
 
+    String ex1c = SearchUtils.search(strings, (str) -> str.length() < 5);
+    String ex2c = SearchUtils.search(strings, (str) -> str.contains("u"));
+    System.out.println(ex1c);
+    System.out.println(ex2c);
     pen.close();
   } // main(String[])
 } // class SearchUtils
